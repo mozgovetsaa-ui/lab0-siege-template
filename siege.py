@@ -3,11 +3,13 @@
 Запуск: python3 siege.py siege_log.txt
 """
 
+
 import sys
 
 
 def main(path: str) -> None:
-   a = open(path).readlines()[2:]
+
+    a = open(path).readlines()[2:]
 
     for i in a:
         if i == "\n":
@@ -71,6 +73,7 @@ def main(path: str) -> None:
 
         damage = round(float(base_damage) * condition * (1 + 0.15 * float(buffs)), 2)
         print(f"Игрок {name} из гильдии {guild.upper()} нанес {damage} по воротам.")
+
 
 if __name__ == "__main__":
     main(sys.argv[1] if len(sys.argv) > 1 else "siege_log.txt")
